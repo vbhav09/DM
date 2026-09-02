@@ -11,7 +11,7 @@ export default function Home() {
           <span><strong>DURGA MOTORS</strong><small>म/स दुर्गा मोटर्स</small></span>
         </a>
         <nav aria-label="Primary navigation">
-          <a href="#about">About</a><a href="#reviews">Reviews</a>
+          <a href="#about">About</a><a href="#products">Products</a><a href="#reviews">Reviews</a>
           <a className="nav-call" href="tel:+919669659070"><span aria-hidden="true">☎</span> Call now</a>
         </nav>
       </header>
@@ -59,9 +59,65 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="products" className="products section-pad" aria-labelledby="products-title">
+        <div className="products-heading">
+          <div>
+            <div className="section-label light">02 — Products & services</div>
+            <p className="eyebrow">Start your own livelihood</p>
+            <h2 id="products-title">Autos built for<br />earning every day.</h2>
+          </div>
+          <p>
+            Explore battery and diesel auto options for city and rural use, with finance assistance designed to help you get started.
+          </p>
+        </div>
+
+        <div className="product-grid">
+          <article className="product-card electric">
+            <div className="product-top"><span>For city routes</span><b>⚡ ELECTRIC</b></div>
+            <div className="product-copy">
+              <p className="product-kicker">Battery Auto</p>
+              <h3>Clean, quiet and economical.</h3>
+              <ul><li>Environment-friendly operation</li><li>Zero tailpipe emissions</li><li>Lower running expenses</li></ul>
+            </div>
+            <div className="offer"><small>Down payment from</small><strong>₹10,000</strong><span>plus easy instalments</span></div>
+          </article>
+
+          <article className="product-card diesel">
+            <div className="product-top"><span>For rural routes</span><b>● DIESEL</b></div>
+            <div className="product-copy">
+              <p className="product-kicker">Diesel Auto</p>
+              <h3>Strong power for longer journeys.</h3>
+              <ul><li>Powerful and dependable</li><li>Suited to longer distances</li><li>Built for demanding routes</li></ul>
+            </div>
+            <div className="offer"><small>Down payment range</small><strong>₹40,000–₹50,000</strong><span>plus easy instalments</span></div>
+          </article>
+        </div>
+
+        <div className="services-row">
+          <div><span>₹</span><strong>Finance assistance</strong><small>Help with suitable financing options</small></div>
+          <div><span>%</span><strong>Competitive rates</strong><small>Subject to lender terms and eligibility</small></div>
+          <div><span>✓</span><strong>Easy instalments</strong><small>Repayment plans for eligible customers</small></div>
+          <div><span>☎</span><strong>Personal guidance</strong><small>Talk directly with Pankaj Soni</small></div>
+        </div>
+
+        <div className="offer-banner">
+          <div className="offer-poster"><img src="/rozgar-auto-offer.jpeg" alt="Battery and diesel auto livelihood offer from Durga Motors" /></div>
+          <div className="offer-contact">
+            <p className="eyebrow">Employment vehicle enquiry</p>
+            <h3>Begin your work<br />closer to home.</h3>
+            <p>Contact Pankaj Soni for product availability, down-payment guidance and finance information.</p>
+            <div className="offer-actions">
+              <a className="button product-call" href="tel:+917389009070">☎ Call 7389009070</a>
+              <a className="button product-whatsapp" href="https://wa.me/917389009070" target="_blank" rel="noreferrer">WhatsApp enquiry →</a>
+            </div>
+            <small className="disclaimer">*Finance, interest rate, down payment and instalments are subject to financier/dealer eligibility, approval, terms and conditions.</small>
+          </div>
+        </div>
+      </section>
+
       <section className="real-photos section-pad" aria-labelledby="photos-title">
         <div className="photos-heading">
-          <div><div className="section-label">02 — At Durga Motors</div><h2 id="photos-title">A real look<br />inside our store.</h2></div>
+          <div><div className="section-label">03 — At Durga Motors</div><h2 id="photos-title">A real look<br />inside our store.</h2></div>
           <p>Authentic photos from the Durga Motors business listing in Mandla.</p>
         </div>
         <PhotoCarousel />
@@ -70,7 +126,7 @@ export default function Home() {
 
       <section id="reviews" className="reviews section-pad">
         <div className="reviews-head">
-          <div><div className="section-label light">03 — Customer reviews</div><h2>Words from<br />our customers.</h2></div>
+          <div><div className="section-label light">04 — Customer reviews</div><h2>Words from<br />our customers.</h2></div>
           <div className="score"><strong>5.0</strong><span>★★★★★</span><small>Based on 2 Google reviews</small></div>
         </div>
         <div className="review-grid">
