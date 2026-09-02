@@ -1,3 +1,5 @@
+import { PhotoCarousel } from '@/components/photo-carousel';
+
 const mapUrl = 'https://www.google.com/maps/search/?api=1&query=J989%2B8R%20Mandla%2C%20Madhya%20Pradesh';
 
 export default function Home() {
@@ -62,16 +64,7 @@ export default function Home() {
           <div><div className="section-label">02 — At Durga Motors</div><h2 id="photos-title">A real look<br />inside our store.</h2></div>
           <p>Authentic photos from the Durga Motors business listing in Mandla.</p>
         </div>
-        <div className="photo-grid">
-          <figure className="photo-large">
-            <img src="/durga-motors-front.jpg" alt="Durga Motors storefront in Mandla with Piaggio commercial vehicles signage" />
-            <figcaption>Durga Motors storefront</figcaption>
-          </figure>
-          <figure>
-            <img src="/durga-motors-interior.jpg" alt="Inside Durga Motors showing stocked vehicle parts shelves" />
-            <figcaption>Parts stock and store interior</figcaption>
-          </figure>
-        </div>
+        <PhotoCarousel />
         <a className="text-link photos-link" href={mapUrl} target="_blank" rel="noreferrer">View the Google business listing <span>↗</span></a>
       </section>
 
