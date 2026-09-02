@@ -1,6 +1,5 @@
 "use client";
 
-import Link from 'next/link';
 import { useState } from 'react';
 import { featuredProducts } from '@/lib/piaggio-products';
 
@@ -20,7 +19,7 @@ export function VehicleShowcase() {
     <div className="official-vehicle-grid" aria-live="polite">
       {visibleVehicles.map(vehicle => <article key={vehicle.name}>
         <div className="official-product-image"><img src={vehicle.image} alt={`${vehicle.name} product view`} /></div>
-        <p>{vehicle.fuel}</p><h3>{vehicle.name}</h3><span>{vehicle.spec}</span><Link href={`/products/${vehicle.slug}`}>View details →</Link>
+        <p>{vehicle.fuel}</p><h3>{vehicle.name}</h3><span>{vehicle.spec}</span><a href={`/products/${vehicle.slug}`}>View details →</a>
       </article>)}
     </div>
   </>;

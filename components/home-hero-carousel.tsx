@@ -1,7 +1,6 @@
 'use client';
 
 import * as React from 'react';
-import Link from 'next/link';
 import { type CarouselApi, Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
 const slides = [
@@ -21,7 +20,7 @@ export function HomeHeroCarousel() {
       <CarouselContent className="official-hero-track">
         {slides.map((slide, index) => <CarouselItem className="official-hero-slide" key={slide.image}>
           <img src={slide.image} alt="Piaggio commercial vehicle promotional banner" />
-          <div className="official-hero-overlay"><div className="official-hero-copy"><p>{slide.eyebrow}</p><h1>{slide.title}</h1><span>{slide.copy}</span><Link href={slide.href}>Explore vehicles →</Link></div></div>
+          <div className="official-hero-overlay"><div className="official-hero-copy"><p>{slide.eyebrow}</p><h1>{slide.title}</h1><span>{slide.copy}</span><a href={slide.href}>Explore vehicles →</a></div></div>
           <small className="official-image-credit">Official Piaggio promotional image</small>
         </CarouselItem>)}
       </CarouselContent>
