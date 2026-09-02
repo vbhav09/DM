@@ -834,6 +834,7 @@ h2 { font-size:clamp(44px,5vw,68px); }
 
 /* Responsive primary navigation */
 .mobile-menu-button { display:none; }
+.mobile-navigation { display:none; }
 @media (max-width:780px) {
   .site-header.is-menu-open { background:rgba(19,136,207,.98); box-shadow:0 10px 30px rgba(3,74,122,.22); }
   .nav-shell { gap:9px; }
@@ -853,4 +854,20 @@ h2 { font-size:clamp(44px,5vw,68px); }
   .nav-enquire { width:42px; padding:0; font-size:0; }
   .nav-enquire span { font-size:16px; }
   .brand-copy strong { font-size:14px; }
+}
+
+/* Native mobile navigation: reliable without client-side routing */
+@media (max-width:780px) {
+  .mobile-navigation { flex:0 0 42px; display:block; }
+  .mobile-navigation summary { width:42px; height:42px; display:grid; align-content:center; justify-items:center; gap:5px; padding:0; border:1px solid rgba(255,255,255,.55); border-radius:50%; background:rgba(6,44,77,.22); cursor:pointer; list-style:none; }
+  .mobile-navigation summary::-webkit-details-marker { display:none; }
+  .mobile-navigation summary span { width:17px; height:2px; display:block; border-radius:2px; background:#fff; transition:transform .2s ease,opacity .2s ease; }
+  .mobile-navigation[open] summary span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+  .mobile-navigation[open] summary span:nth-child(2) { opacity:0; }
+  .mobile-navigation[open] summary span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+  .site-header:has(.mobile-navigation[open]) { background:rgba(19,136,207,.98); box-shadow:0 10px 30px rgba(3,74,122,.22); }
+  .site-header .mobile-navigation>nav { position:absolute; top:70px; left:0; right:0; display:none; margin:0; padding:10px 12px 16px; background:rgba(19,136,207,.98); box-shadow:0 18px 28px rgba(3,74,122,.2); }
+  .site-header .mobile-navigation[open]>nav { display:grid; grid-template-columns:1fr; }
+  .site-header .mobile-navigation[open]>nav>a { display:flex; min-height:47px; align-items:center; padding:0 14px; border-bottom:1px solid rgba(255,255,255,.16); color:#fff; font-size:13px; font-weight:700; }
+  .site-header .mobile-navigation[open]>nav>a:last-child { border-bottom:0; }
 }
