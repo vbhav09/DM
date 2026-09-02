@@ -837,6 +837,8 @@ h2 { font-size:clamp(44px,5vw,68px); }
 @media (max-width:780px) {
   .site-header.is-menu-open { background:rgba(19,136,207,.98); box-shadow:0 10px 30px rgba(3,74,122,.22); }
   .nav-shell { gap:9px; }
+  .nav-shell>.brand { min-width:0; margin-right:auto; }
+  .nav-enquire,.mobile-menu-button { margin-left:0; }
   .site-header nav { position:absolute; top:70px; left:0; right:0; display:none; margin:0; padding:10px 12px 16px; background:rgba(19,136,207,.98); box-shadow:0 18px 28px rgba(3,74,122,.2); }
   .site-header nav.mobile-open { display:grid; grid-template-columns:1fr; }
   .site-header nav.mobile-open>a:not(.nav-call) { display:flex; min-height:47px; align-items:center; padding:0 14px; border-bottom:1px solid rgba(255,255,255,.16); color:#fff; font-size:13px; font-weight:700; }
