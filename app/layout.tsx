@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Barlow_Condensed, Manrope } from 'next/font/google';
 import './globals.css';
+import { SiteHeader } from '@/components/site-header';
+import { SiteFooter } from '@/components/site-footer';
 
 const heading = Barlow_Condensed({ variable: '--font-heading', subsets: ['latin'], weight: ['600', '700', '800'] });
 const body = Manrope({ variable: '--font-body', subsets: ['latin'] });
@@ -8,6 +10,11 @@ const body = Manrope({ variable: '--font-body', subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Durga Motors | Auto Market in Mandla',
   description: 'Visit Durga Motors on Jabalpur Road, Muhgaon, Mandla. Call 096696 59070 for vehicle enquiries and friendly local service.',
+  icons: {
+    icon: [{ url: '/piaggio-logo-transparent.png', type: 'image/png' }],
+    shortcut: '/piaggio-logo-transparent.png',
+    apple: '/piaggio-logo-transparent.png',
+  },
   openGraph: {
     title: 'Durga Motors | Auto Market in Mandla',
     description: 'Drive forward with confidence. Visit Durga Motors in Muhgaon, Mandla.',
@@ -22,5 +29,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body className={`${heading.variable} ${body.variable}`}>{children}</body></html>;
+  return <html lang="en"><body className={`${heading.variable} ${body.variable}`}><SiteHeader />{children}<SiteFooter /></body></html>;
 }

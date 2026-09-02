@@ -38,9 +38,92 @@ h1 { margin: 0; max-width: 580px; font: 800 clamp(64px,7.4vw,112px)/.86 var(--fo
 .hero-meta strong { font: 700 18px var(--font-heading); letter-spacing: .03em; }
 .hero-meta small { color: #9fb0aa; font-size: 11px; }
 @media (max-width: 780px) {
-  .site-header { height: 72px; padding: 0 18px; } nav>a:not(.nav-call) { display: none; } .nav-call { padding: 10px 12px; }
+  .site-header { height: 72px; padding: 0 18px; } .site-header nav>a:not(.nav-call) { display: none; } .nav-call { padding: 10px 12px; }
   .hero { grid-template-columns: 1fr; } .hero-image { min-height: 38vh; } .hero-content { padding: 44px 22px 56px; }
   h1 { font-size: clamp(56px,20vw,82px); } .hero-copy { margin: 20px 0 26px; } .hero-meta { margin-top: 38px; }
+}
+
+/* Modern visual refresh */
+body {
+  background: #f6f4ef;
+  background-image: radial-gradient(circle at 8% 2%, rgba(241,180,67,.12), transparent 28%);
+}
+.site-header {
+  position: sticky; top: 0; z-index: 50; height: 78px; margin: 0;
+  background: rgba(246,244,239,.86); border-bottom-color: rgba(23,27,31,.08);
+  backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+}
+.brand-mark { border-radius: 12px; transform: none; box-shadow: 0 8px 22px rgba(217,74,45,.22); }
+nav { gap: 10px; }
+nav>a:not(.nav-call) { padding: 10px 13px; border-radius: 999px; transition: background .2s ease; }
+nav>a:not(.nav-call):hover { background: rgba(24,53,47,.08); }
+.nav-call,.button { border-radius: 999px; transition: transform .2s ease, filter .2s ease, box-shadow .2s ease; }
+.nav-call:hover,.button:hover { transform: translateY(-2px); }
+.nav-call { box-shadow: 0 8px 22px rgba(24,53,47,.16); }
+.hero { min-height: calc(100vh - 78px); grid-template-columns: 1.05fr .95fr; gap: 14px; padding: 14px; }
+.hero-image,.hero-content { min-height: calc(100vh - 106px); border-radius: 28px; }
+.hero-image { overflow: hidden; background-position: center; box-shadow: 0 22px 70px rgba(23,27,31,.12); }
+.hero-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg,transparent 55%,rgba(0,0,0,.36)); }
+.hero-content { background: linear-gradient(145deg,#214940 0%,#112b26 100%); display: flex; flex-direction: column; justify-content: center; box-shadow: 0 22px 70px rgba(23,27,31,.13); }
+.hero-content::before { content: ''; position: absolute; width: 330px; height: 330px; border-radius: 50%; right: -180px; top: -160px; background: rgba(241,180,67,.12); filter: blur(3px); }
+.rating-pill { border-radius: 999px; box-shadow: 0 8px 24px rgba(241,180,67,.18); }
+h1 { text-wrap: balance; }
+.button.primary { box-shadow: 0 10px 25px rgba(217,74,45,.25); }
+.button.secondary { background: rgba(255,255,255,.05); backdrop-filter: blur(8px); }
+.section-pad { padding-left: clamp(24px,7vw,118px); padding-right: clamp(24px,7vw,118px); }
+.feature-strip { gap: 14px; border: 0; }
+.feature-strip>div { min-height: 190px; border: 1px solid rgba(23,27,31,.08) !important; border-radius: 22px; background: rgba(255,255,255,.58); box-shadow: 0 14px 34px rgba(23,27,31,.05); transition: transform .25s ease, box-shadow .25s ease; }
+.feature-strip>div:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(23,27,31,.09); }
+.products { margin: 0 14px; border-radius: 32px; background: linear-gradient(150deg,#111916 0%,#1c2925 100%); overflow: hidden; }
+.product-grid { gap: 16px; }
+.product-card { min-height: 500px; border-radius: 26px; border: 1px solid rgba(255,255,255,.13); box-shadow: inset 0 1px 0 rgba(255,255,255,.1),0 18px 45px rgba(0,0,0,.16); transition: transform .25s ease, box-shadow .25s ease; }
+.product-card:hover { transform: translateY(-6px); box-shadow: inset 0 1px 0 rgba(255,255,255,.1),0 28px 55px rgba(0,0,0,.24); }
+.product-card.electric { background: linear-gradient(145deg,#1b5b89,#123d60); }
+.product-card.electric.loader { background: linear-gradient(145deg,#1c7567,#124c44); }
+.product-card.diesel { background: linear-gradient(145deg,#765025,#4e3216); }
+.product-card.diesel.loader { background: linear-gradient(145deg,#8b4932,#5b2e22); }
+.offer { border-top-color: rgba(255,255,255,.18); }
+.services-row { gap: 12px; border: 0; }
+.services-row>div { border: 1px solid #35403c !important; border-radius: 18px; background: rgba(255,255,255,.025); }
+.offer-banner { border-radius: 28px; overflow: hidden; box-shadow: 0 25px 70px rgba(0,0,0,.24); }
+.offer-poster img { transition: transform .6s ease; }
+.offer-banner:hover .offer-poster img { transform: scale(1.025); }
+.product-call,.product-whatsapp { box-shadow: 0 9px 23px rgba(0,0,0,.13); }
+.real-photos { padding-top: clamp(72px,10vw,140px); }
+.photo-slider { border-radius: 28px; overflow: hidden; box-shadow: 0 24px 65px rgba(23,27,31,.14); }
+.photo-slide figure { border-radius: 0; }
+.slider-dots { padding-left: 4px; }
+.slider-dots button { border-radius: 999px; }
+.reviews { margin: 0 14px; border-radius: 32px; background: linear-gradient(145deg,#18352f,#10251f); }
+.review-grid { gap: 16px; }
+.review-card { border-radius: 24px; border: 1px solid rgba(255,255,255,.08); }
+.review-card.featured { background: linear-gradient(145deg,#fffdf8,#eee8dd); box-shadow: 0 20px 50px rgba(0,0,0,.15); }
+.contact { margin: 14px; gap: 14px; padding: 14px; border-radius: 32px; background: #d94a2d; }
+.contact-card,.visit-card { border-radius: 23px; }
+.contact-card { padding-left: clamp(34px,6vw,86px); }
+.visit-card { box-shadow: 0 18px 45px rgba(102,31,18,.16); }
+.footer { margin-top: 14px; border-radius: 32px 32px 0 0; }
+@media (prefers-reduced-motion: no-preference) {
+  .hero-content>* { animation: rise-in .7s ease both; }
+  .hero-content>*:nth-child(2) { animation-delay: .06s; }
+  .hero-content>*:nth-child(3) { animation-delay: .12s; }
+  .hero-content>*:nth-child(4) { animation-delay: .18s; }
+  .hero-content>*:nth-child(5) { animation-delay: .24s; }
+  @keyframes rise-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+}
+@media (max-width: 780px) {
+  .site-header { height: 70px; }
+  .hero { padding: 8px; gap: 8px; }
+  .hero-image,.hero-content { min-height: auto; border-radius: 22px; }
+  .hero-image { min-height: 44vh; }
+  .hero-content { padding: 50px 22px 58px; }
+  .products,.reviews { margin: 0 8px; border-radius: 25px; }
+  .product-card { min-height: 470px; border-radius: 22px; }
+  .services-row { gap: 8px; }
+  .services-row>div { min-height: 150px; border-radius: 16px; }
+  .offer-banner,.photo-slider { border-radius: 22px; }
+  .contact { margin: 8px; padding: 8px; gap: 8px; border-radius: 25px; }
+  .contact-card,.visit-card { border-radius: 19px; }
 }
 
 .section-pad { padding: clamp(72px,10vw,140px) clamp(24px,7vw,108px); }
@@ -64,12 +147,32 @@ h2 { margin: 0; font: 800 clamp(50px,6vw,88px)/.9 var(--font-heading); letter-sp
 .products-heading .eyebrow { margin-top: 0; }
 .products-heading>p { max-width: 460px; justify-self: end; color: #aeb9b5; line-height: 1.8; }
 .product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 68px; }
+.catalogue-head { display: grid; grid-template-columns: 1.2fr .8fr; align-items: end; gap: 50px; }
+.catalogue-head .eyebrow { margin-top: 0; }
+.catalogue-head>p { max-width: 520px; justify-self: end; color: #aeb9b5; line-height: 1.8; }
+.catalogue-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 48px; }
+.catalogue-tabs span { padding: 10px 16px; border: 1px solid #3b4742; border-radius: 999px; color: #b7c1bd; font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.catalogue-tabs span:first-child { background: #f1b443; border-color: #f1b443; color: #111916; }
+.catalogue-grid { margin-top: 24px; }
+.catalogue-card { grid-template-rows: auto auto 1fr auto auto; padding: 24px; }
+.catalogue-image { margin: 18px -6px 0; aspect-ratio: 3/2; overflow: hidden; border-radius: 16px; background: #efe9df; }
+.catalogue-image img { width: 100%; height: 100%; display: block; object-fit: cover; }
+.catalogue-card .product-copy { padding: 32px 4px; }
+.catalogue-card h3 { font-size: clamp(34px,3.5vw,54px); }
+.catalogue-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 22px; }
+.catalogue-actions a { min-height: 48px; display: grid; place-items: center; padding: 10px; background: rgba(255,255,255,.1); font-size: 11px; font-weight: 800; text-align: center; }
+.catalogue-actions a:last-child { background: #17874e; }
+.image-note { margin: 18px 0 0; color: #788680; font-size: 10px; line-height: 1.6; }
 .product-card { min-height: 490px; display: grid; grid-template-rows: auto 1fr auto; padding: clamp(28px,4vw,50px); color: #fff; overflow: hidden; position: relative; }
 .product-card::after { position: absolute; right: -16px; top: 60px; font: 800 220px/1 var(--font-heading); opacity: .06; }
 .product-card.electric { background: #164c78; }
 .product-card.electric::after { content: 'E'; }
 .product-card.diesel { background: #5b3b18; }
 .product-card.diesel::after { content: 'D'; }
+.product-card.electric.loader { background: #176357; }
+.product-card.electric.loader::after { content: 'EL'; right: -36px; font-size: 170px; }
+.product-card.diesel.loader { background: #733927; }
+.product-card.diesel.loader::after { content: 'DL'; right: -36px; font-size: 170px; }
 .product-top { display: flex; justify-content: space-between; gap: 20px; padding-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,.24); font-size: 10px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
 .product-top b { color: #f1b443; }
 .product-copy { padding: 42px 0; position: relative; z-index: 1; }
@@ -81,6 +184,7 @@ h2 { margin: 0; font: 800 clamp(50px,6vw,88px)/.9 var(--font-heading); letter-sp
 .offer small { color: rgba(255,255,255,.65); font-size: 9px; letter-spacing: .12em; text-transform: uppercase; }
 .offer strong { grid-row: span 2; font: 800 clamp(34px,3.5vw,54px)/.9 var(--font-heading); color: #fff; }
 .offer span { font-size: 10px; font-weight: 700; text-transform: uppercase; }
+.quote-offer strong { font-size: clamp(31px,3vw,46px); text-transform: uppercase; }
 .services-row { display: grid; grid-template-columns: repeat(4,1fr); margin-top: 18px; border: 1px solid #35403c; }
 .services-row>div { min-height: 160px; display: grid; align-content: center; gap: 7px; padding: 24px; border-right: 1px solid #35403c; }
 .services-row>div:last-child { border-right: 0; }
@@ -143,13 +247,101 @@ h2 { margin: 0; font: 800 clamp(50px,6vw,88px)/.9 var(--font-heading); letter-sp
 .visit-card>div { border-bottom: 1px solid #ded7cc; }
 .visit-card small { color: #d94a2d; font-size: 10px; font-weight: 800; letter-spacing: .14em; }
 .visit-card p { line-height: 1.7; }
+.location-map-link { display:inline-block; margin:-6px 0 18px; color:var(--piaggio-blue); font-size:11px; font-weight:800; }
+.footer-locations p strong { color:#fff; }
 .directions-link { display: flex; justify-content: space-between; padding: 18px 0; font-weight: 800; border-bottom: 2px solid #18352f; }
-.footer { display: flex; align-items: center; justify-content: space-between; gap: 28px; min-height: 150px; padding: 30px clamp(24px,7vw,108px); background: #111916; color: #fff; font-size: 12px; }
+.footer { display: block; padding: clamp(48px,6vw,80px) clamp(24px,7vw,108px) 26px; background: #111916; color: #fff; font-size: 12px; }
+.footer-main { display: grid; grid-template-columns: 1.35fr 1fr .75fr; gap: clamp(36px,7vw,100px); align-items: start; }
+.footer-identity { display: grid; gap: 30px; }
+.dealer-badge { width: fit-content; display: grid; gap: 3px; padding: 16px 20px; border: 1px solid #35403c; border-left: 4px solid #f1b443; border-radius: 14px; background: rgba(255,255,255,.035); }
+.dealer-badge span,.footer-block>small { color: #f1b443; font-size: 9px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.dealer-badge strong { font: 800 28px/1 var(--font-heading); letter-spacing: .08em; }
+.dealer-badge small { color: #a4afab; font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.footer-block { display: grid; justify-items: start; gap: 12px; }
+.footer-block p { margin: 0; color: #a4afab; line-height: 1.7; }
+.footer-block>a:not(.footer-phone) { padding-bottom: 5px; border-bottom: 1px solid #68746f; font-weight: 800; }
+.footer-phone { font: 700 26px var(--font-heading); }
+.footer-bottom { display: flex; justify-content: space-between; gap: 24px; margin-top: 54px; padding-top: 22px; border-top: 1px solid #2d3733; color: #6f7c77; font-size: 10px; }
+.footer-bottom p { margin: 0; color: inherit; }
 .footer p { color: #86928e; }
 .footer-brand small { color: #86928e; }
 .mobile-bar { display: none; }
 
+.inner-page { min-height: 70vh; background: #f3efe7; }
+.page-intro { padding: clamp(90px,12vw,160px) clamp(24px,7vw,108px) clamp(62px,8vw,100px); background: linear-gradient(135deg,#e8dfd2,#f8f4ed); }
+.page-intro .eyebrow { margin-top: 0; color: #d94a2d; }
+.page-intro h1 { margin: 0; max-width: 920px; font: 800 clamp(64px,9vw,130px)/.82 var(--font-heading); letter-spacing: -.035em; text-transform: uppercase; }
+.page-intro>p:last-child { max-width: 640px; margin: 30px 0 0; color: #625d56; font-size: 17px; line-height: 1.75; }
+.dark-intro { background: linear-gradient(135deg,#18352f,#0f211d); color: #fff; }
+.dark-intro>p:last-child { color: #9fb0aa; }
+.dark-intro .score { justify-items: start; margin-top: 44px; }
+.home-links { background: #111916; color: #fff; }
+.home-link-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
+.home-link-grid>a { min-height: 300px; display: flex; flex-direction: column; padding: clamp(28px,4vw,52px); background: #18352f; transition: transform .2s ease,background .2s ease; }
+.home-link-grid>a:nth-child(2) { background: #164c78; }
+.home-link-grid>a:nth-child(3) { background: #5b3b18; }
+.home-link-grid>a:nth-child(4) { background: #733927; }
+.home-link-grid>a:hover { transform: translateY(-4px); }
+.home-link-grid small { color: #f1b443; font-size: 10px; font-weight: 800; letter-spacing: .14em; }
+.home-link-grid h2 { margin-top: auto; font-size: clamp(38px,4vw,60px); }
+.home-link-grid p { max-width: 460px; color: rgba(255,255,255,.7); line-height: 1.65; }
+.home-link-grid span { margin-top: 20px; font-size: 12px; font-weight: 800; }
+.inner-page .products,.inner-page .reviews { margin-top: 0; }
+.inner-page .real-photos { padding-top: clamp(72px,10vw,140px); }
+.inner-page .contact { margin-top: 0; }
+
+/* Refined product catalogue */
+.product-intro { max-width: 1440px; margin: 0 auto; display: grid; grid-template-columns: 1.3fr .7fr; align-items: end; gap: clamp(40px,8vw,120px); padding-top: clamp(76px,9vw,120px); }
+.product-intro h1 { max-width: 780px; font-size: clamp(62px,7.6vw,108px); }
+.product-intro>div:first-child>p:last-child { max-width: 590px; margin: 26px 0 0; color: #625d56; font-size: 16px; line-height: 1.75; }
+.intro-panel { padding: 30px; border: 1px solid rgba(23,27,31,.09); border-radius: 22px; background: rgba(255,255,255,.64); box-shadow: 0 18px 50px rgba(23,27,31,.06); }
+.intro-panel span { color: #d94a2d; font-size: 9px; font-weight: 800; letter-spacing: .16em; }
+.intro-panel strong { display: block; margin-top: 12px; font: 700 30px var(--font-heading); text-transform: uppercase; }
+.intro-panel p { margin: 12px 0 22px; color: #6c665f; font-size: 12px; line-height: 1.65; }
+.intro-panel a { display: inline-flex; padding-bottom: 7px; border-bottom: 2px solid #d94a2d; font-size: 11px; font-weight: 800; }
+.inner-page .products { max-width: 1440px; margin: 14px auto; padding: clamp(68px,8vw,110px) clamp(20px,5vw,76px); border-radius: 32px; }
+.catalogue-head h2 { font-size: clamp(46px,5.2vw,76px); }
+.catalogue-card { min-height: 0; padding: 18px; color: #171b1f; background: #fffdf8 !important; border: 1px solid rgba(255,255,255,.18); border-radius: 24px; box-shadow: 0 18px 45px rgba(0,0,0,.14); }
+.catalogue-card::after { display: none; }
+.catalogue-card.electric { border-top: 4px solid #2d91c7; }
+.catalogue-card.electric.loader { border-top-color: #34a28b; }
+.catalogue-card.diesel { border-top-color: #d79531; }
+.catalogue-card.diesel.loader { border-top-color: #c86443; }
+.catalogue-card .product-top { padding: 5px 4px 16px; border-bottom: 0; color: #777168; }
+.catalogue-card .product-top b { padding: 7px 10px; border-radius: 999px; background: #edf6f9; color: #176080; }
+.catalogue-card.diesel .product-top b { background: #fff2dc; color: #82510b; }
+.catalogue-image { margin: 0; aspect-ratio: 16/10; border-radius: 18px; }
+.catalogue-image img { transition: transform .35s ease; }
+.catalogue-card:hover .catalogue-image img { transform: scale(1.025); }
+.catalogue-card .product-copy { padding: 26px 5px 24px; }
+.catalogue-card .product-kicker { color: #d94a2d; }
+.catalogue-card h3 { max-width: 380px; color: #171b1f; font-size: clamp(32px,3vw,46px); }
+.catalogue-card ul { grid-template-columns: repeat(3,1fr); gap: 8px; margin-top: 24px; color: #6d6860; }
+.catalogue-card li { padding: 10px; border-radius: 10px; background: #f3efe7; line-height: 1.45; }
+.catalogue-card li::before { display: none; }
+.catalogue-card .offer { padding: 18px 5px 0; border-top-color: #ddd6ca; }
+.catalogue-card .offer small { color: #827b71; }
+.catalogue-card .offer strong { color: #18352f; font-size: clamp(31px,3vw,44px); }
+.catalogue-card .offer span { color: #6d6860; }
+.catalogue-actions { margin-top: 18px; }
+.catalogue-actions a { border-radius: 12px; background: #18352f; color: #fff; transition: transform .2s ease,filter .2s ease; }
+.catalogue-actions a:hover { transform: translateY(-2px); filter: brightness(1.08); }
+.image-note { padding-left: 4px; }
+.inner-page .services-row { margin-top: 50px; }
+.inner-page .offer-banner { margin-top: 50px; }
+
 @media (max-width: 780px) {
+  .site-header nav a:not(.nav-call) { display: none; }
+  .product-intro { grid-template-columns: 1fr; gap: 30px; }
+  .product-intro h1 { font-size: clamp(52px,16vw,76px); }
+  .inner-page .products { margin: 8px; padding: 58px 16px; border-radius: 25px; }
+  .catalogue-card { padding: 14px; }
+  .catalogue-card ul { grid-template-columns: 1fr; }
+  .catalogue-card li { padding: 9px 11px; }
+  .page-intro { padding: 72px 22px 58px; }
+  .page-intro h1 { font-size: clamp(54px,17vw,82px); }
+  .home-link-grid { grid-template-columns: 1fr; }
+  .home-link-grid>a { min-height: 260px; }
   .section-pad { padding: 72px 22px; }
   .section-label { margin-bottom: 30px; }
   .about-grid,.contact { grid-template-columns: 1fr; }
@@ -158,6 +350,11 @@ h2 { margin: 0; font: 800 clamp(50px,6vw,88px)/.9 var(--font-heading); letter-sp
   .feature-strip>div { min-height: 145px; border-right: 0; border-bottom: 1px solid #cfc7bb; }
   .feature-strip>div:last-child { border-bottom: 0; }
   .products-heading,.product-grid,.offer-banner { grid-template-columns: 1fr; }
+  .catalogue-head { grid-template-columns: 1fr; }
+  .catalogue-head>p { justify-self: start; }
+  .catalogue-tabs { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 8px; }
+  .catalogue-tabs span { flex: 0 0 auto; }
+  .catalogue-actions { grid-template-columns: 1fr; }
   .products-heading>p { justify-self: start; }
   .product-card { min-height: 500px; }
   .offer { grid-template-columns: 1fr; }
@@ -181,8 +378,456 @@ h2 { margin: 0; font: 800 clamp(50px,6vw,88px)/.9 var(--font-heading); letter-sp
   .review-card { min-height: 280px; }
   .contact { padding: 0; }
   .contact-card,.visit-card { padding: 70px 22px; }
-  .footer { flex-direction: column; align-items: start; padding-bottom: 110px; }
+  .footer { padding: 56px 22px 110px; }
+  .footer-main { grid-template-columns: 1fr; gap: 42px; }
+  .footer-bottom { flex-direction: column; margin-top: 42px; }
   .mobile-bar { position: fixed; z-index: 20; left: 12px; right: 12px; bottom: 12px; display: grid; grid-template-columns: 1fr 1fr; padding: 5px; background: #fffdf8; box-shadow: 0 14px 45px rgba(0,0,0,.24); }
   .mobile-bar a { display: grid; place-items: center; min-height: 48px; font-size: 12px; font-weight: 800; }
   .mobile-bar a:first-child { background: #d94a2d; color: #fff; }
+}
+
+/* 2026 unified showroom redesign */
+:root { --ink:#101816; --forest:#153d35; --forest-2:#0d2a24; --orange:#e45232; --gold:#f1b443; --paper:#f6f1e8; --white:#fffdf9; }
+body { background: var(--paper); color: var(--ink); }
+.site-header { height: 94px; padding: 12px clamp(14px,2.5vw,36px); background: rgba(246,241,232,.92); border: 0; }
+.nav-shell { width: 100%; max-width: 1440px; height: 70px; margin: 0 auto; display: flex; align-items: center; gap: 20px; padding: 8px 9px 8px 12px; border: 1px solid rgba(16,24,22,.09); border-radius: 20px; background: rgba(255,253,249,.86); box-shadow: 0 12px 34px rgba(16,24,22,.08); }
+.brand { flex: 0 0 auto; }
+.brand-mark { width: 46px; height: 46px; border-radius: 13px; background: linear-gradient(145deg,#ef6648,#c9381f); box-shadow: 0 8px 20px rgba(228,82,50,.22); }
+.brand-copy strong { font-size: 19px; }
+.brand-copy small { color: #756f66; }
+.nav-dealer { display: inline-flex; align-items: center; gap: 7px; padding-left: 18px; border-left: 1px solid #ddd5ca; color: #756f66; font-size: 9px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
+.nav-dealer i { width: 7px; height: 7px; border-radius: 50%; background: #31a66e; box-shadow: 0 0 0 4px rgba(49,166,110,.12); }
+.site-header nav { margin-left: auto; gap: 3px; }
+.site-header nav>a:not(.nav-call) { padding: 11px 12px; color: #3c443f; font-size: 11px; border-radius: 10px; }
+.site-header nav>a:not(.nav-call):hover { background: #eef0ea; color: #153d35; }
+.nav-call { min-width: 154px; min-height: 52px; display: flex; justify-content: center; border-radius: 13px; background: var(--forest); box-shadow: 0 9px 22px rgba(21,61,53,.18); }
+.nav-call>span:last-child { display: grid; gap: 1px; }
+.nav-call small { color: #a9bbb5; font-size: 7px; letter-spacing: .14em; }
+.hero { width: calc(100% - 28px); max-width: 1440px; min-height: 690px; margin: 0 auto; padding: 0; gap: 12px; grid-template-columns: 1.08fr .92fr; }
+.hero-image,.hero-content { min-height: 690px; border-radius: 28px; }
+.hero-image { box-shadow: none; }
+.hero-content { padding: clamp(48px,6vw,88px); background: radial-gradient(circle at 90% 10%,rgba(241,180,67,.18),transparent 29%),linear-gradient(145deg,#1b4c42,#0e2d27); box-shadow: none; }
+.hero-content h1 { font-size: clamp(66px,7vw,102px); }
+.rating-pill { padding: 9px 14px; font-size: 10px; }
+.section-pad { width: 100%; max-width: 1440px; margin-left: auto; margin-right: auto; padding: clamp(76px,9vw,126px) clamp(24px,6vw,90px); }
+.about { margin-top: 18px; border-radius: 30px; background: rgba(255,253,249,.66); }
+.about h2,.home-link-grid h2 { text-wrap: balance; }
+.feature-strip { margin-top: 70px; }
+.feature-strip>div { min-height: 160px; padding: 24px; background: var(--white); }
+.home-links { margin-top: 18px; margin-bottom: 18px; border-radius: 30px; background: linear-gradient(145deg,#101816,#192a26); }
+.home-link-grid>a { min-height: 270px; border: 1px solid rgba(255,255,255,.08); border-radius: 22px; overflow: hidden; }
+.home-link-grid>a:hover { transform: translateY(-5px) scale(1.005); }
+.inner-page { padding-bottom: 18px; }
+.page-intro { max-width: 1440px; margin: 0 auto 18px; border-radius: 0 0 30px 30px; }
+.inner-page .products,.inner-page .reviews,.inner-page .contact { max-width: 1440px; margin-left: auto; margin-right: auto; }
+.real-photos { border-radius: 30px; }
+.review-card,.contact-card,.visit-card,.offer-banner { border-radius: 22px; }
+.footer { max-width: 1440px; margin: 18px auto 0; padding: clamp(54px,7vw,88px) clamp(28px,6vw,90px) 28px; border-radius: 30px 30px 0 0; background: radial-gradient(circle at 5% 10%,rgba(241,180,67,.08),transparent 25%),linear-gradient(145deg,#111b18,#091310); }
+.footer-main { grid-template-columns: 1.3fr .55fr .85fr .72fr; gap: clamp(28px,5vw,72px); }
+.footer-intro { max-width: 380px; margin: -10px 0 0; color: #8c9994 !important; line-height: 1.75; }
+.footer-links a { color: #a9b4b0; }
+.footer-block>a:not(.footer-phone):hover,.footer-links a:hover { color: #fff; }
+.dealer-badge { border-radius: 16px; background: rgba(255,255,255,.045); }
+.footer-bottom { margin-top: 66px; }
+@media (max-width: 1080px) {
+  .nav-dealer { display:none; }
+  .site-header nav>a:not(.nav-call) { padding: 10px 8px; }
+  .hero-content h1 { font-size: clamp(58px,7vw,82px); }
+  .footer-main { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 780px) {
+  .site-header { height: 82px; padding: 8px; }
+  .nav-shell { height: 66px; padding: 7px; border-radius: 17px; }
+  .brand-mark { width: 43px; height: 43px; }
+  .brand-copy strong { font-size: 16px; }
+  .brand-copy small { font-size: 8px; }
+  .nav-call { min-width: 52px; width: 52px; padding: 0; }
+  .nav-call>span:last-child { display: none; }
+  .hero { width: calc(100% - 16px); min-height: auto; grid-template-columns: 1fr; gap: 8px; }
+  .hero-image { min-height: 48vh; }
+  .hero-content { min-height: auto; padding: 50px 22px 58px; }
+  .hero-content h1 { font-size: clamp(54px,18vw,76px); }
+  .section-pad { padding: 68px 20px; }
+  .about,.home-links { width: calc(100% - 16px); margin-top: 8px; border-radius: 24px; }
+  .home-link-grid>a { min-height: 240px; }
+  .page-intro { margin: 0 8px 8px; border-radius: 0 0 24px 24px; }
+  .footer { margin: 8px 8px 0; border-radius: 24px 24px 0 0; }
+  .footer-main { grid-template-columns: 1fr; }
+}
+
+/* Piaggio-inspired clean corporate direction */
+:root { --piaggio-blue:#1388cf; --piaggio-dark:#083b68; --piaggio-navy:#062c4d; --piaggio-light:#eef7fc; }
+body { background:#fff; background-image:none; color:#1b2833; }
+.site-header { position:fixed; top:0; left:0; right:0; z-index:50; width:100%; height:76px; padding:0; background:transparent; border:0; backdrop-filter:none; transition:background-color .28s ease,box-shadow .28s ease,backdrop-filter .28s ease; }
+.site-header.is-scrolled { background:rgba(19,136,207,.97); box-shadow:0 10px 30px rgba(3,74,122,.22); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); }
+.nav-shell { max-width:1180px; height:76px; margin:0 auto; padding:0 24px; border:0; border-radius:0; background:transparent; box-shadow:none; color:#fff; }
+.brand-mark { width:48px; height:48px; border:0; border-radius:10px; background:transparent; box-shadow:none; }
+.brand-mark img { width:100%; height:100%; display:block; object-fit:contain; transform:scale(1.16); }
+.brand-copy strong { color:#fff; font-size:20px; }
+.brand-copy small { color:rgba(255,255,255,.72); }
+.brand-copy,.site-header nav>a:not(.nav-call),.nav-dealer { text-shadow:0 2px 12px rgba(0,25,48,.48); }
+.nav-dealer { color:rgba(255,255,255,.8); border-left-color:rgba(255,255,255,.3); }
+.nav-dealer i { background:#fff; box-shadow:none; }
+.site-header nav { margin-left:auto; }
+.site-header nav>a:not(.nav-call) { color:#fff; font-size:12px; border-radius:0; }
+.site-header nav>a:not(.nav-call):hover { color:#fff; background:rgba(255,255,255,.13); }
+.nav-call { min-width:150px; min-height:44px; border-radius:999px; background:#fff; color:var(--piaggio-blue); box-shadow:none; }
+.nav-call small { color:#708596; }
+.nav-enquire { min-width:130px; min-height:44px; display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:0 21px; border-radius:999px; background:#fff; color:var(--piaggio-blue); font-size:11px; font-weight:800; box-shadow:none; }
+.nav-enquire:hover { background:#eef8fd; }
+.hero { width:100%; max-width:none; min-height:620px; margin:0; display:grid; grid-template-columns:minmax(0,1fr); padding:0; }
+.hero-image,.hero-content { grid-area:1/1; min-height:620px; border-radius:0; }
+.hero-image { background-position:center; box-shadow:none; }
+.hero-image::after { background:linear-gradient(90deg,rgba(4,31,55,.84) 0%,rgba(4,31,55,.58) 42%,rgba(4,31,55,.08) 74%); }
+.hero-content { width:100%; max-width:1180px; margin:0 auto; justify-content:center; padding:76px 24px; background:transparent; box-shadow:none; overflow:visible; z-index:2; }
+.hero-content::before,.hero-content::after { display:none; }
+.hero-content h1 { max-width:650px; font-size:clamp(64px,7vw,96px); text-shadow:0 3px 22px rgba(0,0,0,.22); }
+.hero-copy { max-width:540px; color:#fff; }
+.rating-pill { border-radius:4px; background:#fff; color:var(--piaggio-blue); box-shadow:none; }
+.eyebrow { color:#80cfff; }
+.button { border-radius:4px; }
+.button.primary { background:var(--piaggio-blue); box-shadow:none; }
+.button.secondary { background:#fff; border-color:#fff; color:var(--piaggio-dark); }
+.hero-meta { max-width:520px; border-top-color:rgba(255,255,255,.35); }
+.section-pad { max-width:1180px; padding:90px 24px; }
+.section-label { color:var(--piaggio-blue); }
+.about { margin-top:0; border-radius:0; background:#fff; }
+.eyebrow.dark { color:var(--piaggio-blue); }
+h2 { font-size:clamp(44px,5vw,68px); }
+.text-link { border-bottom-color:var(--piaggio-blue); }
+.feature-strip { gap:0; border:1px solid #dbe7ee; border-radius:0; }
+.feature-strip>div { min-height:150px; border:0 !important; border-right:1px solid #dbe7ee !important; border-radius:0; background:#fff; box-shadow:none; }
+.feature-strip>div:last-child { border-right:0 !important; }
+.feature-strip span { color:var(--piaggio-blue); }
+.home-links { max-width:none; margin:0; padding-left:max(24px,calc((100vw - 1132px)/2)); padding-right:max(24px,calc((100vw - 1132px)/2)); border-radius:0; background:var(--piaggio-light); color:#173247; }
+.home-links .section-label { color:var(--piaggio-blue); }
+.home-link-grid { gap:18px; }
+.home-link-grid>a,.home-link-grid>a:nth-child(n) { min-height:245px; padding:34px; border:1px solid #d7e8f2; border-radius:0; background:#fff; color:#173247; box-shadow:0 10px 28px rgba(15,80,122,.06); }
+.home-link-grid>a:hover { transform:translateY(-4px); border-color:#8bc8eb; }
+.home-link-grid small { color:var(--piaggio-blue); }
+.home-link-grid p { color:#647786; }
+.home-link-grid span { color:var(--piaggio-blue); }
+.page-intro,.product-intro { max-width:none; margin:0; border-radius:0; background:linear-gradient(110deg,var(--piaggio-dark),var(--piaggio-blue)); color:#fff; }
+.page-intro>p:last-child,.product-intro>div:first-child>p:last-child { color:rgba(255,255,255,.82); }
+.page-intro .eyebrow,.product-intro .eyebrow { color:#a9ddfa; }
+.intro-panel { border:1px solid rgba(255,255,255,.28); border-radius:4px; background:rgba(255,255,255,.1); box-shadow:none; }
+.intro-panel span { color:#bde6fc; }
+.intro-panel p { color:rgba(255,255,255,.76); }
+.intro-panel a { border-bottom-color:#fff; }
+.inner-page { padding-bottom:0; background:#fff; }
+.inner-page .products { max-width:1180px; margin:0 auto; padding:90px 24px; border-radius:0; background:#fff; color:#1b2833; }
+.catalogue-head .eyebrow { color:var(--piaggio-blue); }
+.catalogue-head>p { color:#607485; }
+.catalogue-tabs span { border-color:#c8dce8; color:#526d7f; }
+.catalogue-tabs span:first-child { border-color:var(--piaggio-blue); background:var(--piaggio-blue); color:#fff; }
+.catalogue-card { border:1px solid #dce9f0; border-top:3px solid var(--piaggio-blue) !important; border-radius:0; box-shadow:0 9px 25px rgba(15,74,110,.07); }
+.catalogue-image { border-radius:0; background:#f5f8fa; }
+.catalogue-actions a { border-radius:3px; background:var(--piaggio-dark); }
+.catalogue-actions a:last-child { background:var(--piaggio-blue); }
+.inner-page .services-row>div { border-color:#d8e5ec !important; border-radius:0; background:#f8fbfd; }
+.inner-page .services-row span { color:var(--piaggio-blue); }
+.inner-page .services-row strong { color:#173247; }
+.inner-page .services-row small { color:#6c7e8b; }
+.offer-banner { border-radius:0; box-shadow:0 12px 35px rgba(10,60,95,.1); }
+.real-photos { max-width:1180px; border-radius:0; background:#fff; }
+.photo-slider { border-radius:0; }
+.inner-page .reviews { max-width:none; margin:0; border-radius:0; background:var(--piaggio-light); color:#173247; }
+.review-card { border:1px solid #d5e6ef; border-radius:0; background:#fff; color:#173247; }
+.review-card.featured { background:#fff; }
+.inner-page .contact { max-width:1180px; margin:0 auto; padding:70px 24px; border-radius:0; background:#fff; }
+.contact-card { padding:70px 55px; border-radius:0; background:var(--piaggio-blue); }
+.visit-card { border:1px solid #d7e5ed; border-radius:0; box-shadow:none; }
+.footer { max-width:none; margin:0; padding:70px max(24px,calc((100vw - 1132px)/2)) 26px; border-radius:0; background:var(--piaggio-navy); }
+.footer-main { max-width:1132px; margin:0 auto; }
+.dealer-badge { border-radius:0; border-left-color:#69c5f5; }
+.dealer-badge span,.footer-block>small { color:#69c5f5; }
+.footer-bottom { max-width:1132px; margin-left:auto; margin-right:auto; }
+@media (max-width:780px) {
+  .site-header { height:70px; }
+  .nav-shell { height:70px; padding:0 12px; }
+  .hero { width:100%; min-height:auto; }
+  .hero-image,.hero-content { min-height:600px; }
+  .hero-image::after { background:linear-gradient(90deg,rgba(4,31,55,.82),rgba(4,31,55,.35)); }
+  .hero-content { padding:60px 22px; }
+  .section-pad { padding:70px 20px; }
+  .about,.home-links,.page-intro,.footer { width:100%; margin:0; border-radius:0; }
+  .feature-strip { grid-template-columns:1fr; }
+  .feature-strip>div { border-right:0 !important; border-bottom:1px solid #dbe7ee !important; }
+  .home-link-grid>a { min-height:210px; }
+  .inner-page .products { margin:0; padding:70px 16px; border-radius:0; }
+  .inner-page .contact { margin:0; padding:40px 16px; }
+  .contact-card { padding:55px 24px; }
+}
+
+/* Piaggio-reference homepage composition */
+.official-home { background:#fff; }
+.official-hero { position:relative; background:#eef5f9; overflow:hidden; }
+.official-hero-track { margin-left:0 !important; }
+.official-hero-slide { position:relative; min-height:clamp(430px,47vw,680px); padding-left:0 !important; overflow:hidden; }
+.official-hero-slide>img { width:100%; height:100%; position:absolute; inset:0; display:block; object-fit:cover; object-position:center; }
+.official-hero-overlay { position:absolute; inset:0; display:flex; align-items:center; background:linear-gradient(90deg,rgba(2,34,61,.8) 0%,rgba(2,34,61,.47) 38%,transparent 66%); }
+.official-hero-copy { width:100%; max-width:1180px; margin:0 auto; padding:50px 24px; color:#fff; }
+.official-hero-copy p,.official-heading p,.dealer-service-band>div>p,.about-info>p,.dealer-cta p { margin:0 0 14px; color:#78caf6; font-size:11px; font-weight:800; letter-spacing:.15em; }
+.official-hero-copy h1 { max-width:650px; margin:0; font:700 clamp(48px,6vw,82px)/.95 var(--font-heading); text-transform:uppercase; }
+.official-hero-copy>span { max-width:520px; display:block; margin:20px 0 28px; font-size:15px; line-height:1.7; }
+.official-hero-copy>a,.official-button { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0 25px; border-radius:999px; background:#fff; color:#087fc4; font-size:12px; font-weight:800; }
+.official-image-credit { position:absolute; right:14px; bottom:10px; color:rgba(255,255,255,.7); font-size:8px; text-shadow:0 1px 4px rgba(0,0,0,.7); }
+.official-arrow { z-index:4; width:46px !important; height:46px !important; border:0 !important; border-radius:50% !important; background:rgba(255,255,255,.9) !important; color:#087fc4 !important; }
+.official-prev { left:20px !important; }
+.official-next { right:20px !important; }
+.official-dots { position:absolute; z-index:5; left:50%; bottom:18px; display:flex; gap:8px; transform:translateX(-50%); }
+.official-dots button { width:9px; height:9px; padding:0; border:1px solid #fff; border-radius:50%; background:transparent; cursor:pointer; }
+.official-dots button.active { background:#fff; }
+.official-section { max-width:1180px; margin:0 auto; padding:90px 24px; }
+.official-heading { display:grid; grid-template-columns:1.15fr .85fr; align-items:end; gap:70px; }
+.official-heading p,.about-info>p { color:#1388cf; }
+.official-heading h2,.dealer-service-band h2,.about-info h2,.dealer-cta h2 { margin:0; font:700 clamp(42px,5vw,66px)/.98 var(--font-heading); text-transform:none; }
+.official-heading>span { color:#617585; font-size:14px; line-height:1.75; }
+.vehicle-tabs { display:flex; justify-content:center; gap:6px; margin:54px 0 28px; border-bottom:1px solid #dbe6ec; }
+.vehicle-tabs>* { padding:12px 20px; color:#6c7e8a; font-size:12px; }
+.vehicle-tabs button { border:0; border-bottom:3px solid transparent; background:transparent; font-family:inherit; cursor:pointer; transition:color .2s ease,border-color .2s ease,background-color .2s ease; }
+.vehicle-tabs button:hover { color:#1388cf; background:#f3f9fc; }
+.vehicle-tabs button.active { color:#1388cf; border-bottom-color:#1388cf; font-weight:700; }
+.official-vehicle-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+.official-vehicle-grid article { display:flex; flex-direction:column; min-width:0; padding:16px; border:1px solid #dce7ed; background:#fff; transition:transform .2s ease,box-shadow .2s ease; }
+.official-vehicle-grid article:hover { transform:translateY(-5px); box-shadow:0 18px 35px rgba(16,89,133,.1); }
+.official-product-image { aspect-ratio:4/3; margin:-3px -3px 18px; overflow:hidden; background:#f5f7f8; }
+.official-product-image img { width:100%; height:100%; object-fit:cover; }
+.official-vehicle-grid article>p { margin:0 0 8px; color:#1388cf; font-size:9px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+.official-vehicle-grid h3 { margin:0; font:700 26px var(--font-heading); text-transform:uppercase; }
+.official-vehicle-grid article>span { min-height:50px; margin-top:10px; color:#72838f; font-size:11px; line-height:1.55; }
+.official-vehicle-grid article>a { margin-top:auto; padding-top:16px; border-top:1px solid #e2e9ed; color:#1388cf; font-size:11px; font-weight:800; }
+.center-action { display:flex; justify-content:center; margin-top:35px; }
+.center-action .official-button,.about-info .official-button { background:#1388cf; color:#fff; }
+.dealer-service-band { padding:90px max(24px,calc((100vw - 1132px)/2)); background:linear-gradient(120deg,#087fc4,#0d99dc); color:#fff; }
+.dealer-service-band>div:first-child { display:grid; grid-template-columns:1fr 1fr; gap:20px 70px; align-items:end; }
+.dealer-service-band>div:first-child>p { grid-column:1/-1; color:#bce8ff; }
+.dealer-service-band>div:first-child>span { color:#d9f1fc; line-height:1.7; }
+.service-icons { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; margin-top:55px; background:rgba(255,255,255,.3); }
+.service-icons article { min-height:210px; padding:32px; background:#0c83c6; }
+.service-icons b { display:grid; place-items:center; width:42px; height:42px; border:1px solid rgba(255,255,255,.45); border-radius:50%; color:#bde8ff; }
+.service-icons h3 { margin:32px 0 8px; font:700 25px var(--font-heading); text-transform:uppercase; }
+.service-icons p { margin:0; color:#d8effa; font-size:12px; line-height:1.6; }
+.official-about { display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:center; }
+.about-photo { min-height:520px; }
+.about-photo img { width:100%; height:100%; min-height:520px; display:block; object-fit:cover; }
+.about-info>span { display:block; margin:24px 0; color:#627685; line-height:1.8; }
+.about-facts { display:flex; gap:38px; margin:30px 0; padding:24px 0; border-top:1px solid #dbe5eb; border-bottom:1px solid #dbe5eb; }
+.about-facts b { display:grid; gap:3px; color:#687b89; font-size:10px; text-transform:uppercase; }
+.about-facts strong { color:#1388cf; font:700 30px var(--font-heading); }
+.dealer-cta { display:flex; align-items:center; justify-content:space-between; gap:40px; padding:60px max(24px,calc((100vw - 1132px)/2)); background:#eef7fc; }
+.dealer-cta p { color:#1388cf; }
+.dealer-cta h2 { font-size:clamp(38px,4vw,56px); }
+.dealer-cta>div:last-child { display:flex; flex-wrap:wrap; gap:10px; }
+.dealer-cta a { display:inline-flex; align-items:center; min-height:48px; padding:0 22px; border-radius:999px; background:#1388cf; color:#fff; font-size:12px; font-weight:800; }
+.dealer-cta a:last-child { background:#fff; color:#0b6fa9; border:1px solid #b8d9eb; }
+@media (max-width:900px) {
+  .official-vehicle-grid { grid-template-columns:1fr 1fr; }
+  .official-heading,.dealer-service-band>div:first-child,.official-about { grid-template-columns:1fr; }
+  .dealer-service-band>div:first-child>p { grid-column:auto; }
+  .dealer-cta { align-items:flex-start; flex-direction:column; }
+}
+@media (max-width:600px) {
+  .nav-enquire { min-width:auto; min-height:42px; padding:0 15px; font-size:10px; }
+  .official-hero-slide { min-height:520px; }
+  .official-hero-slide>img { object-position:center; }
+  .official-hero-overlay { background:linear-gradient(90deg,rgba(2,34,61,.78),rgba(2,34,61,.35)); }
+  .official-hero-copy h1 { font-size:48px; }
+  .official-arrow { display:none !important; }
+  .official-section,.dealer-service-band { padding:68px 20px; }
+  .official-heading { gap:20px; }
+  .vehicle-tabs { justify-content:flex-start; overflow-x:auto; }
+  .vehicle-tabs>* { flex:0 0 auto; }
+  .official-vehicle-grid,.service-icons { grid-template-columns:1fr; }
+  .official-vehicle-grid article { padding:13px; }
+  .official-about { gap:38px; }
+  .about-photo,.about-photo img { min-height:340px; }
+  .dealer-cta { padding:52px 20px; }
+}
+
+/* Shared Piaggio-style inner pages */
+.subpage-banner { position:relative; min-height:430px; overflow:hidden; background:#073b65; }
+.subpage-banner>img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; }
+.subpage-shade { position:absolute; inset:0; background:linear-gradient(90deg,rgba(3,37,64,.87),rgba(3,37,64,.5) 46%,rgba(3,37,64,.05) 76%); }
+.subpage-banner-copy { position:relative; z-index:2; max-width:1180px; min-height:430px; margin:0 auto; display:flex; flex-direction:column; justify-content:center; align-items:flex-start; padding:58px 24px; color:#fff; }
+.subpage-banner-copy p { margin:0 0 14px; color:#86d3f8; font-size:11px; font-weight:800; letter-spacing:.16em; }
+.subpage-banner-copy h1 { max-width:760px; margin:0; font:700 clamp(50px,6vw,78px)/.96 var(--font-heading); text-transform:uppercase; }
+.subpage-banner-copy>span { max-width:570px; margin-top:20px; color:#e3f4fc; line-height:1.7; }
+.subpage-banner-copy>a { display:inline-flex; min-height:46px; align-items:center; margin-top:26px; padding:0 23px; border-radius:999px; background:#fff; color:#087fc4; font-size:11px; font-weight:800; }
+.subpage-banner>small { position:absolute; z-index:2; right:12px; bottom:9px; color:rgba(255,255,255,.7); font-size:8px; }
+.page-dealer-cta { border-top:1px solid #d1e4ef; }
+.gallery-heading { margin-bottom:50px; }
+.review-summary-bar { display:grid; grid-template-columns:1.25fr repeat(3,1fr); align-items:center; gap:1px; margin-bottom:42px; background:#cfe3ee; }
+.review-summary-bar>div,.review-summary-bar>p { min-height:110px; margin:0; display:flex; align-items:center; justify-content:center; padding:22px; background:#fff; color:#607685; font-size:11px; font-weight:700; text-align:center; }
+.review-summary-bar>div { gap:14px; background:#1388cf; color:#fff; }
+.review-summary-bar strong { font:700 48px var(--font-heading); }
+.review-summary-bar span { color:#ffe08a; letter-spacing:.08em; }
+.contact-description { max-width:520px; color:#d9f2ff; line-height:1.7; }
+.enquiry-section { max-width:1180px; margin:0 auto; display:grid; grid-template-columns:.8fr 1.2fr; gap:70px; padding:85px 24px; }
+.enquiry-intro .eyebrow { margin:0 0 14px; color:var(--piaggio-blue); }
+.enquiry-intro h2 { margin:0 0 20px; font:700 clamp(42px,5vw,64px)/.98 var(--font-heading); text-transform:uppercase; color:var(--piaggio-dark); }
+.enquiry-intro>p { max-width:390px; color:#607685; line-height:1.75; }
+.enquiry-intro>span { display:block; margin-top:28px; padding-top:20px; border-top:1px solid #d7e5ed; color:#78909f; font-size:11px; }
+.enquiry-form { display:grid; grid-template-columns:1fr 1fr; gap:20px; padding:34px; border:1px solid #d6e6ef; background:#f5fbfe; box-shadow:0 18px 45px rgba(8,59,104,.08); }
+.enquiry-form label { display:grid; gap:8px; }
+.enquiry-form label>span { color:#31576f; font-size:10px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+.enquiry-form input,.enquiry-form select,.enquiry-form textarea { width:100%; min-height:48px; padding:12px 14px; border:1px solid #c8dce8; border-radius:3px; outline:0; background:#fff; color:#173247; font:inherit; }
+.enquiry-form textarea { resize:vertical; }
+.enquiry-form input:focus,.enquiry-form select:focus,.enquiry-form textarea:focus { border-color:var(--piaggio-blue); box-shadow:0 0 0 3px rgba(19,136,207,.12); }
+.enquiry-form .form-message,.enquiry-form button,.enquiry-form>small { grid-column:1/-1; }
+.enquiry-form button { min-height:52px; display:flex; align-items:center; justify-content:space-between; padding:0 20px; border:0; border-radius:3px; background:var(--piaggio-blue); color:#fff; font-weight:800; cursor:pointer; }
+.enquiry-form button:hover { background:#0876b8; }
+.enquiry-form>small { color:#78909f; font-size:9px; text-align:center; }
+.contact-service-strip { max-width:1180px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:1px; padding:0 24px 90px; background:#d6e7f0; }
+.contact-service-strip article { min-height:190px; padding:30px; background:#eef7fc; }
+.contact-service-strip b { color:#1388cf; font-size:11px; }
+.contact-service-strip h3 { margin:34px 0 8px; font:700 25px var(--font-heading); text-transform:uppercase; }
+.contact-service-strip p { margin:0; color:#687d8b; font-size:12px; line-height:1.6; }
+@media (max-width:780px) {
+  .subpage-banner,.subpage-banner-copy { min-height:390px; }
+  .subpage-banner-copy { padding:48px 22px; }
+  .subpage-banner-copy h1 { font-size:48px; }
+  .review-summary-bar { grid-template-columns:1fr 1fr; }
+  .enquiry-section { grid-template-columns:1fr; gap:30px; padding:58px 16px; }
+  .enquiry-form { grid-template-columns:1fr; padding:22px 16px; }
+  .enquiry-form label,.enquiry-form .form-message { grid-column:1; }
+  .contact-service-strip { grid-template-columns:1fr; padding:0 16px 65px; }
+}
+
+/* Efficient contact page layout */
+.inner-page .contact { grid-template-columns:.9fr 1.1fr; gap:16px; padding:52px 24px 38px; }
+.inner-page .contact-card { padding:48px 38px; }
+.inner-page .contact-card h2 { margin-bottom:16px; font-size:clamp(40px,4.5vw,58px); }
+.inner-page .visit-card { grid-template-columns:1fr 1fr; align-content:start; gap:18px 28px; padding:34px; }
+.inner-page .visit-card>div { min-width:0; }
+.inner-page .visit-card p { margin:8px 0 12px; line-height:1.55; }
+.enquiry-section { gap:48px; padding-top:55px; padding-bottom:55px; }
+.enquiry-form { gap:15px; padding:26px; }
+.enquiry-form textarea { min-height:84px; }
+.contact-service-strip { padding-bottom:58px; }
+.contact-service-strip article { min-height:145px; padding:24px; }
+.contact-service-strip h3 { margin:22px 0 7px; }
+@media (max-width:780px) {
+  .inner-page .contact { grid-template-columns:1fr; gap:10px; padding:32px 16px 20px; }
+  .inner-page .contact-card { padding:38px 24px; }
+  .inner-page .visit-card { grid-template-columns:1fr; gap:16px; padding:26px 22px; }
+  .enquiry-section { gap:24px; padding-top:42px; padding-bottom:42px; }
+  .contact-service-strip article { min-height:120px; }
+}
+
+/* Compact customer ratings */
+.inner-page .reviews { padding-top:58px; padding-bottom:70px; }
+.review-summary-bar { max-width:900px; gap:10px; margin:0 auto 30px; background:transparent; }
+.review-summary-bar>div,.review-summary-bar>p { min-height:72px; padding:12px 16px; border:1px solid #d7e6ee; border-radius:8px; box-shadow:0 6px 18px rgba(8,59,104,.05); }
+.review-summary-bar>div { gap:10px; border-color:var(--piaggio-blue); }
+.review-summary-bar strong { font-size:34px; }
+.review-summary-bar span { font-size:12px; }
+.review-grid { max-width:900px; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin:0 auto; }
+.review-card { min-height:220px; padding:24px; }
+.review-card blockquote { margin:18px 0; font-size:clamp(22px,2.2vw,30px); }
+.quote-mark { height:28px; font-size:50px; }
+@media (max-width:780px) {
+  .inner-page .reviews { padding:42px 16px 52px; }
+  .review-summary-bar { gap:8px; margin-bottom:22px; }
+  .review-summary-bar>div,.review-summary-bar>p { min-height:64px; padding:10px; font-size:10px; }
+  .review-summary-bar strong { font-size:29px; }
+  .review-grid { grid-template-columns:1fr; gap:10px; margin-top:0; }
+  .review-card { min-height:190px; padding:20px; }
+}
+
+/* Complete official Piaggio catalogue */
+.full-catalogue-intro { max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1.1fr .9fr; align-items:end; gap:70px; padding:80px 24px 48px; }
+.full-catalogue-intro p,.category-title p { margin:0 0 12px; color:#1388cf; font-size:10px; font-weight:800; letter-spacing:.15em; }
+.full-catalogue-intro h2,.category-title h2 { margin:0; font:700 clamp(44px,5vw,66px)/.98 var(--font-heading); text-transform:uppercase; }
+.full-catalogue-intro>span { color:#647988; font-size:14px; line-height:1.75; }
+.catalogue-jump { max-width:1132px; margin:0 auto 30px; display:flex; gap:4px; padding:6px; border:1px solid #d4e3eb; background:#f5fafd; }
+.catalogue-jump a { flex:1; display:grid; place-items:center; min-height:46px; color:#587284; font-size:11px; font-weight:800; }
+.catalogue-jump a:first-child { background:#1388cf; color:#fff; }
+.piaggio-category { max-width:1180px; margin:0 auto; padding:58px 24px; scroll-margin-top:90px; }
+.piaggio-category:nth-of-type(even) { background:#f5fafd; }
+.category-title { display:flex; align-items:end; justify-content:space-between; gap:30px; margin-bottom:28px; padding-bottom:20px; border-bottom:1px solid #d8e5ec; }
+.category-title>span { color:#718594; font-size:11px; font-weight:800; text-transform:uppercase; }
+.piaggio-product-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.piaggio-product-grid article { min-width:0; display:flex; flex-direction:column; padding:15px; border:1px solid #d9e6ed; background:#fff; transition:transform .2s ease,box-shadow .2s ease; }
+.piaggio-product-grid article:hover { transform:translateY(-4px); box-shadow:0 16px 34px rgba(10,82,124,.1); }
+.piaggio-product-image { aspect-ratio:4/3; overflow:hidden; background:#f3f6f8; }
+.piaggio-product-image img { width:100%; height:100%; display:block; object-fit:contain; }
+.piaggio-product-grid article>p { margin:19px 0 8px; color:#1388cf; font-size:9px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+.piaggio-product-grid h3 { margin:0; font:700 29px/.98 var(--font-heading); text-transform:uppercase; }
+.piaggio-product-grid article>span { min-height:52px; display:block; margin:13px 0 18px; color:#6b7f8d; font-size:11px; line-height:1.55; }
+.piaggio-card-actions { display:grid; grid-template-columns:1.35fr .85fr; gap:6px; margin-top:auto; }
+.piaggio-card-actions a { min-height:44px; display:grid; place-items:center; padding:8px; background:#1388cf; color:#fff; font-size:9px; font-weight:800; text-align:center; }
+.piaggio-card-actions a:last-child { border:1px solid #c8dce8; background:#fff; color:#126fa6; }
+.catalogue-disclaimer { max-width:1132px; margin:34px auto 80px; padding:25px 28px; border-left:4px solid #1388cf; background:#eef7fc; }
+.catalogue-disclaimer strong { color:#0b5e91; font-size:11px; text-transform:uppercase; }
+.catalogue-disclaimer p { margin:8px 0 0; color:#637987; font-size:10px; line-height:1.7; }
+@media (max-width:900px) {
+  .piaggio-product-grid { grid-template-columns:1fr 1fr; }
+}
+@media (max-width:600px) {
+  .full-catalogue-intro { grid-template-columns:1fr; gap:20px; padding:62px 20px 38px; }
+  .catalogue-jump { margin:0 16px 20px; overflow-x:auto; }
+  .catalogue-jump a { flex:0 0 130px; }
+  .piaggio-category { padding:48px 16px; }
+  .piaggio-product-grid { grid-template-columns:1fr; }
+  .category-title { align-items:start; }
+  .catalogue-disclaimer { margin:20px 16px 60px; }
+}
+
+/* Compact shared footer */
+.footer { padding-top:42px; padding-bottom:20px; }
+.footer-main { gap:clamp(22px,3vw,42px); }
+.footer-identity { gap:16px; }
+.footer-brand .brand-mark { width:40px; height:40px; }
+.footer-intro { margin:0 !important; max-width:300px; font-size:11px; line-height:1.55; }
+.dealer-badge { gap:2px; padding:11px 14px; }
+.dealer-badge strong { font-size:22px; }
+.dealer-badge small { font-size:8px; }
+.footer-block { gap:8px; }
+.footer-block p { line-height:1.45; }
+.footer-block>a:not(.footer-phone) { padding-bottom:3px; }
+.footer-phone { font-size:22px; }
+.footer-locations p { margin-top:3px; }
+.footer-bottom { margin-top:30px; padding-top:16px; }
+@media (max-width:780px) {
+  .footer { padding:38px 20px 94px; }
+  .footer-main { gap:28px; }
+  .footer-identity { gap:14px; }
+  .footer-bottom { margin-top:28px; }
+}
+
+/* Product detail pages */
+.product-detail { background:#fff; }
+.product-detail-hero { min-height:650px; display:grid; grid-template-columns:1.05fr .95fr; padding-top:76px; background:linear-gradient(135deg,#f1f8fc,#fff); }
+.product-detail-image { display:grid; place-items:center; min-width:0; padding:60px; overflow:hidden; }
+.product-detail-image img { width:100%; max-width:720px; max-height:500px; object-fit:contain; }
+.product-detail-copy { display:flex; flex-direction:column; justify-content:center; padding:70px max(24px,calc((100vw - 1180px)/2)) 70px 55px; background:var(--piaggio-blue); color:#fff; }
+.product-detail-copy>p,.product-spec-heading>p,.product-detail-bottom p { margin:0 0 14px; color:#c8efff; font-size:10px; font-weight:800; letter-spacing:.15em; text-transform:uppercase; }
+.product-detail-copy h1 { margin:0; max-width:560px; font:700 clamp(56px,6vw,86px)/.9 var(--font-heading); text-transform:uppercase; }
+.product-detail-copy>span { max-width:520px; margin-top:25px; color:#e2f4fc; font-size:14px; line-height:1.75; }
+.product-detail-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:32px; }
+.product-detail-actions a { min-height:48px; display:flex; align-items:center; padding:0 21px; border:1px solid #fff; background:#fff; color:#0877b8; font-size:11px; font-weight:800; }
+.product-detail-actions a:last-child { background:transparent; color:#fff; }
+.product-spec-section { max-width:1180px; margin:0 auto; display:grid; grid-template-columns:.8fr 1.2fr; gap:70px; padding:85px 24px; }
+.product-spec-heading>p { color:var(--piaggio-blue); }
+.product-spec-heading h2 { margin:0 0 18px; font:700 clamp(42px,4.5vw,62px)/.98 var(--font-heading); text-transform:uppercase; color:var(--piaggio-dark); }
+.product-spec-heading>span { color:#687e8d; font-size:12px; line-height:1.7; }
+.product-spec-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
+.product-spec-grid article { min-height:105px; display:flex; flex-direction:column; justify-content:center; padding:20px; border:1px solid #d7e6ee; background:#f7fbfd; }
+.product-spec-grid small { color:#6c8493; font-size:9px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
+.product-spec-grid strong { margin-top:8px; color:#0b6093; font:700 25px var(--font-heading); }
+.product-detail-bottom { display:flex; align-items:center; justify-content:space-between; gap:30px; padding:55px max(24px,calc((100vw - 1132px)/2)); background:var(--piaggio-navy); color:#fff; }
+.product-detail-bottom h2 { margin:0; font:700 clamp(36px,4vw,52px) var(--font-heading); text-transform:uppercase; }
+.product-detail-bottom a { flex:0 0 auto; padding:15px 20px; background:var(--piaggio-blue); font-size:11px; font-weight:800; }
+.product-not-found { min-height:70vh; display:grid; place-content:center; gap:20px; padding:120px 24px; text-align:center; }
+@media (max-width:780px) {
+  .product-detail-hero { grid-template-columns:1fr; padding-top:70px; }
+  .product-detail-image { min-height:380px; padding:35px 22px; }
+  .product-detail-copy { padding:50px 22px; }
+  .product-detail-copy h1 { font-size:54px; }
+  .product-spec-section { grid-template-columns:1fr; gap:32px; padding:58px 16px; }
+  .product-spec-grid { grid-template-columns:1fr 1fr; }
+  .product-spec-grid article { min-height:90px; padding:15px; }
+  .product-spec-grid strong { font-size:21px; }
+  .product-detail-bottom { align-items:flex-start; flex-direction:column; padding:45px 20px; }
 }
