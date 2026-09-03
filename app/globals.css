@@ -871,3 +871,19 @@ h2 { font-size:clamp(44px,5vw,68px); }
   .site-header .mobile-navigation[open]>nav>a { display:flex; min-height:47px; align-items:center; padding:0 14px; border-bottom:1px solid rgba(255,255,255,.16); color:#fff; font-size:13px; font-weight:700; }
   .site-header .mobile-navigation[open]>nav>a:last-child { border-bottom:0; }
 }
+
+/* Opening employment offer popup */
+.opening-popup-toggle { position:fixed; width:1px; height:1px; opacity:0; pointer-events:none; }
+.opening-popup-backdrop { position:fixed; z-index:100; inset:0; display:grid; place-items:center; padding:24px; background:rgba(2,24,42,.72); backdrop-filter:blur(5px); animation:popup-fade-in .28s ease both; }
+.opening-popup-toggle:checked+.opening-popup-backdrop { display:none; }
+.opening-popup-card { position:relative; width:min(88vw,500px); max-height:86vh; display:grid; place-items:center; padding:7px; border-radius:12px; background:#fff; box-shadow:0 28px 80px rgba(0,20,38,.42); animation:popup-rise-in .35s ease both; }
+.opening-popup-card img { display:block; width:100%; max-height:calc(86vh - 14px); border-radius:8px; object-fit:contain; }
+.opening-popup-close { position:absolute; z-index:2; top:-14px; right:-14px; width:38px; height:38px; display:grid; place-items:center; border:3px solid #fff; border-radius:50%; background:var(--piaggio-blue); color:#fff; font:700 26px/1 Arial,sans-serif; box-shadow:0 6px 18px rgba(0,28,52,.28); cursor:pointer; }
+@keyframes popup-fade-in { from { opacity:0; } to { opacity:1; } }
+@keyframes popup-rise-in { from { opacity:0; transform:translateY(18px) scale(.97); } to { opacity:1; transform:none; } }
+@media (max-width:600px) {
+  .opening-popup-backdrop { padding:20px; }
+  .opening-popup-card { width:min(88vw,430px); max-height:82vh; padding:5px; }
+  .opening-popup-card img { max-height:calc(82vh - 10px); }
+  .opening-popup-close { top:-11px; right:-11px; width:35px; height:35px; font-size:23px; }
+}

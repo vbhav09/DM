@@ -1,9 +1,11 @@
 import { HomeHeroCarousel } from '@/components/home-hero-carousel';
 import { VehicleShowcase } from '@/components/vehicle-showcase';
+import { OpeningOfferPopup } from '@/components/opening-offer-popup';
 import { mapUrl } from '@/lib/site';
 
 export default function Home() {
   return <main className="official-home">
+    <OpeningOfferPopup />
     <HomeHeroCarousel />
 
     <section className="official-section vehicle-showcase">
